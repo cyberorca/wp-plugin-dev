@@ -1,0 +1,165 @@
+.fts-chip {
+	display: none;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 999999;
+	max-width: min(340px, calc(100vw - 40px));
+	padding: 14px 16px;
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	background: #fafafa;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+	font-size: 14px;
+	line-height: 1.5;
+	animation: fts-slide-in 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fts-chip {
+		animation: none;
+	}
+}
+
+@keyframes fts-slide-in {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fts-close {
+	position: absolute;
+	top: 6px;
+	right: 8px;
+	border: none;
+	background: none;
+	font-size: 18px;
+	line-height: 1;
+	color: #999;
+	cursor: pointer;
+	padding: 4px;
+}
+
+.fts-close:hover {
+	color: #333;
+}
+
+.fts-question {
+	margin: 0 20px 10px 0;
+}
+
+.fts-sub {
+	color: #666;
+	font-size: 13px;
+}
+
+.fts-buttons {
+	display: flex;
+	gap: 8px;
+}
+
+.fts-btn {
+	padding: 6px 14px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	background: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.fts-btn.fts-yes {
+	background: #2563eb;
+	color: #fff;
+	border-color: #2563eb;
+}
+
+.fts-btn.fts-yes:hover {
+	background: #1d4ed8;
+}
+
+.fts-btn.fts-no:hover {
+	background: #f0f0f0;
+}
+
+.fts-dont-show {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 8px;
+	color: #888;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.fts-dont-show input[type="checkbox"] {
+	margin: 0;
+	cursor: pointer;
+}
+
+.fts-dont-show:hover {
+	color: #555;
+}
+
+.fts-downloaded {
+	margin: 0 20px 8px 0;
+}
+
+.fts-steps {
+	margin: 0 0 10px;
+	padding-left: 20px;
+}
+
+.fts-steps li {
+	margin-bottom: 10px;
+}
+
+.fts-steps li:last-child {
+	margin-bottom: 0;
+}
+
+.fts-steps .fts-sub {
+	display: block;
+	margin-top: 2px;
+}
+
+.fts-command {
+	position: relative;
+	background: #1e1e1e;
+	color: #d4d4d4;
+	padding: 8px 40px 8px 10px;
+	border-radius: 6px;
+	font-family: Menlo, Consolas, monospace;
+	font-size: 12px;
+}
+
+/* Wraps instead of scrolling horizontally: a long command (the Windows
+   PowerShell one especially) stays fully readable instead of needing a
+   scrollbar that also hides the Copy button off the visible edge. */
+.fts-command code {
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.fts-copy {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	padding: 4px 7px;
+	font-size: 11px;
+	border-radius: 4px;
+	border: 1px solid #555;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+}
+
+.fts-copy:hover {
+	background: #444;
+}
